@@ -91,9 +91,12 @@
                   {{ recipe.rating | number: '1.0-1'}}
                   <label for="stars-rating-1"><i (click)="rateRecipe(recipe.id, 1)" class="fa fa-star"></i></label>
                   <label for="stars-rating-2"><i (click)="rateRecipe(recipe.id, 2)" class="fa fa-star"></i></label>
-                  <label for="stars-rating-3"><i (click)="rateRecipe(recipe.id, 3)" class="fa fa-star text-primary"></i></label>
-                  <label for="stars-rating-4"><i (click)="rateRecipe(recipe.id, 4)" class="fa fa-star text-primary"></i></label>
-                  <label for="stars-rating-5"><i (click)="rateRecipe(recipe.id, 5)" class="fa fa-star text-primary"></i></label>
+                  <label for="stars-rating-3"><i (click)="rateRecipe(recipe.id, 3)"
+                      class="fa fa-star text-primary"></i></label>
+                  <label for="stars-rating-4"><i (click)="rateRecipe(recipe.id, 4)"
+                      class="fa fa-star text-primary"></i></label>
+                  <label for="stars-rating-5"><i (click)="rateRecipe(recipe.id, 5)"
+                      class="fa fa-star text-primary"></i></label>
                 </div>
                 <p class="no-of-votes ">
                   <span> Ratings: {{ recipe.noOfVotes }} </span>
@@ -222,7 +225,7 @@
 
 
 <!-- Delete Modal -->
-<div class="modal fade" id="deleteRecipeModal" tabindex="-1" role="dialog" aria-labelledby="showMoreModelLabel"
+<div class="modal" id="deleteRecipeModal" tabindex="-1" role="dialog" aria-labelledby="deleteRecipeModelLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -233,13 +236,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Are you sure you want to delete recipe
-          <!--{{deleteRecipe?.name}}?-->
+        <p>Are you sure you want to delete recipe <b>{{deleteRecipe?.title}}</b>?
         </p>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-          <button class="btn btn-danger" data-dismiss="modal">Yes</button>
-          <!--(click)="onDeleteEmloyee(deleteEmployee?.id)" -->
+          <button (click)="onDeleteRecipe(deleteRecipe?.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
         </div>
       </div>
     </div>

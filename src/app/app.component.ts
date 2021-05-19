@@ -90,8 +90,9 @@ export class AppComponent implements OnInit {
       button.setAttribute('data-target', '#updateRecipeModal');
     }
     if (mode === 'delete') {
-      button.setAttribute('data-target', '#deleteRecipeModal');
+      console.log("delete clicked");
       this.deleteRecipe = recipe;
+      button.setAttribute('data-target', '#deleteRecipeModal');
     }
 
     container.appendChild(button);

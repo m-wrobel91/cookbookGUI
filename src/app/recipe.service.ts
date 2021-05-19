@@ -26,7 +26,7 @@ export class RecipeService {
   }
 
   public deleteRecipe(recipeId: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiServerUrl}/recipe/delete${recipeId}`);
+    return this.http.delete<void>(`${this.apiServerUrl}/recipe/delete/${recipeId}`);
   }
 
   public rateRecipe(recipeId: number, rating: number): Observable<Vote> {
